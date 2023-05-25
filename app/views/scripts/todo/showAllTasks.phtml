@@ -7,9 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include ('../app/views/layouts/background.phtml') ?>
+    <?php include (ROOT_PATH.'/app/views/layouts/background.phtml') ?>
     <h1>
-    <?php echo $this->message ?>
+    <?php 
+        echo $this->message;
+        echo "<br>";
+        echo "<br>";
+        print_r( $this->tasks);
+
+    ?>
     </h1>
 </body>
 </html>

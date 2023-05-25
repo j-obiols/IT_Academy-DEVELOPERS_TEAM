@@ -7,7 +7,6 @@
 class ToDoController extends Controller 
 {
 	
-	
     // home method that will show main menu
     public function indexAction(){
         $this->view->message = "TO-DO App - HOME VIEW!!!!";
@@ -26,8 +25,11 @@ class ToDoController extends Controller
     }
 
 	public function showAllTasksAction(){
-		$this->
+        $todo = new ToDoModel();
+        $tasks = $todo->getTasks();
         $this->view->message = "TO-DO App - SHOW ALL TASKS VIEW!!!!";
+        //$this->view->message = var_dump($tasks);
+        $this->view->content = print_r($tasks);
     }
 
 	public function updateTaskAction(){
