@@ -9,13 +9,40 @@
 <body>
     <?php include (ROOT_PATH.'/app/views/layouts/background.phtml') ?>
     <h1>
-    <?php 
-        echo $this->message;
-        echo "<br>";
-        echo "<br>";
-        print_r( $this->tasks);
+    
+    <div>
+        <table class = "border-solid border-2 border-black table-fixed">
+            <thead>
+                <tr  class = "border-solid border-2 border-black table-fixed">
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Start-time</th>
+                    <th>End-time</th>
+                    <th>Author</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <?php foreach($this -> $tasks as $task): ?>
+                <tr>
 
-    ?>
+                    <td> <?php echo $task['name']?> </td>
+                    <td> <?php echo $task['status'] ?> </td>
+                    <td> <?php echo $task['start-time'] ?> </td>
+                    <td> <?php echo $task['end-time']?> </td>
+                    <td> <?php echo $task['author'] ?> </td>
+                    <td> 
+                        <a href= "viewTask.php ?id=<?php echo $task['id']?>">  View</a>
+                        <a href= "updateTask.php ?id=<?php echo $task['id']?>">  Update </a>
+                        <a href= "deleteTask.php ?id=<?php echo $task['id']?>"> Delete</a>
+                    </td>
+                </tr>
+            
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
     </h1>
 </body>
 </html>

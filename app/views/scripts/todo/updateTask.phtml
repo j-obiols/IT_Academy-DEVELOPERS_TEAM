@@ -1,15 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <?php include ('partials/header.phtml') ?>
     <?php include ('../app/views/layouts/background.phtml') ?>
     <h1>
     <?php echo $this->message ?>
    </h1>
-</body>
-</html>
+   <h1> UPDATE TASK </h1>
+   </br>
+   </br>
+   <div>
+     <form method="POST" action="">
+       <div>
+            <label for="name" > Name</label>
+            <input type="text" name="name" value="<?php $tasks['name']?>">
+       </div>
+       <div>
+            <label for="status" > Status </label>
+            <input type="text" name="status" value="codi php" >
+       </div>
+       <div>
+            <label for="start_time" > Start-Time</label>
+            <input type="" name="start_time" value="codi php" >
+       </div>
+       <div>
+            <label for="end_time" >End-Time</label>
+            <input type="" name="end_time" value="codi php" >
+       </div>
+       <div>
+            <label for="author" > Author</label>
+            <input type="text" name="author" value="codi php" >
+       </div>
+     </form>
+   </div>
+</body> 
+<?php include ('partials/footer.phtml') ?>

@@ -83,5 +83,30 @@ class ToDoModel{
         };
 
     }
+    
+    public function getTaskById($id){
+        //Falten coses...
+        // get all tasks
+        $tasks = $this->getTasks();
+
+        foreach($tasks as $task) {
+    
+            if ($task['id'] == $id) {
+              return $task;
+            }
+      
+        }
+      
+        return $null;
+        
+    }
+    
+    public function updateTask(){
+
+    
+         
+    
+
+    }
 
 }
